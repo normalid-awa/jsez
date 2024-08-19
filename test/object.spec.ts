@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { getInstanceKeys, getStaticKeys, isInstantiated } from "../src";
+import { isInstantiated } from "../src";
 
 class T {
 	public static a = 1;
