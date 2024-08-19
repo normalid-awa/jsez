@@ -2,11 +2,10 @@ import typescript from "@rollup/plugin-typescript";
 import path from "path";
 
 const OUTPUT_FOLDER = path.join(process.cwd(), "dist");
-const LIB_NAME = "jsez"
+const LIB_NAME = "jsez";
 
 /** @type {import('rollup').RollupOptions} */
 export default {
-	
 	input: "src/index.ts",
 	output: [
 		{
@@ -20,7 +19,7 @@ export default {
 		{
 			file: path.join(OUTPUT_FOLDER, "index.umd.mjs"),
 			format: "umd",
-			name: LIB_NAME
+			name: LIB_NAME,
 		},
 	],
 	plugins: [typescript()],
