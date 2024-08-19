@@ -1,0 +1,42 @@
+{
+	"name": "jsez",
+	"private": false,
+	"version": "0.0.0",
+	"type": "module",
+	"description": "A useful JavaScript library that provides tons of utilities during development.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/normalid-awa/jsez.git"
+	},
+	"homepage": "https://github.com/normalid-awa/jsez",
+	"bugs": {
+		"url": "https://github.com/normalid-awa/jsez/issues",
+		"email": "rluo2018@gmail.com"
+	},
+	"author": "normalid <rluo2018@gmail.com> (https://github.com/normalid-awa)",
+	"license": "MIT",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"sideEffects": false,
+	"scripts": {
+		"test": "vitest",
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@types/node": "^22.4.1",
+		"typescript": "^5.5.3",
+		"vite": "^5.4.1",
+		"vitest": "^2.0.5"
+	}
+}
