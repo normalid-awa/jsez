@@ -7,7 +7,7 @@ import {
 	getStaticMethodKeys,
 	getStaticPropertyKeys,
 	isInstantiated,
-} from "../../src";
+} from "@jsez/object";
 
 class T {
 	constructor() {

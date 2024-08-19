@@ -1,5 +1,5 @@
 {
-	"name": "jsez",
+	"name": "@jsez/lib",
 	"private": false,
 	"version": "0.0.0",
 	"type": "module",
@@ -15,31 +15,42 @@
 	},
 	"author": "normalid <rluo2018@gmail.com> (https://github.com/normalid-awa)",
 	"license": "MIT",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
+	"main": "./dist/core.cjs",
+	"module": "./dist/core.mjs",
 	"exports": {
 		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
+			"import": "./dist/core.mjs",
+			"require": "./dist/core.umd.mjs",
+			"node": "./dist/core.cjs",
+			"types": "./dist/core.d.ts"
+		},
+		"./*": {
+			"import": "./src/$1/dist/$1.mjs",
+			"require": "./src/$1/dist/$1.umd.mjs",
+			"node": "./src/$1/dist/$1.cjs",
+			"types": "./src/$1/dist/$1.d.ts"
 		}
 	},
 	"files": [
-		"dist"
+		"dist",
+		"src/**/dist"
 	],
 	"sideEffects": false,
+	"workspaces": [
+		"src/object"
+	],
 	"scripts": {
-		"test": "vitest",
-		"dev": "rollup -c -w",
-		"build": "rollup -c",
+		"test": "npm run test --workspaces",
+		"build": "npm run build --workspaces && rollup -c src/rollup.config.common.mjs",
 		"docs": "typedoc"
 	},
 	"devDependencies": {
+		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-typescript": "^11.1.6",
 		"@types/node": "^22.4.1",
 		"rollup": "^4.21.0",
-		"tslib": "^2.6.3",
+		"rollup-plugin-dts": "^6.1.1",
 		"typedoc": "^0.26.6",
-		"typescript": "^5.5.3",
-		"vitest": "^2.0.5"
+		"typescript": "^5.5.4"
 	}
 }

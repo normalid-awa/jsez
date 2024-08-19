@@ -1,0 +1,49 @@
+{
+	"name": "@jsez/object",
+	"private": false,
+	"version": "0.0.0",
+	"description": "The sub-module of jsez library",
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/normalid-awa/jsez.git"
+	},
+	"homepage": "https://github.com/normalid-awa/jsez",
+	"bugs": {
+		"url": "https://github.com/normalid-awa/jsez/issues",
+		"email": "rluo2018@gmail.com"
+	},
+	"author": "normalid <rluo2018@gmail.com> (https://github.com/normalid-awa)",
+	"license": "MIT",
+	"main": "./dist/object.cjs",
+	"module": "./dist/object.mjs",
+	"types": "./dist/object.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/object.mjs",
+			"require": "./dist/object.umd.mjs",
+			"node": "./dist/object.cjs",
+			"types": "./dist/object.d.ts"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"sideEffects": false,
+	"scripts": {
+		"dev": "rollup -c -w",
+		"build": "rollup -c",
+		"test": "vitest",
+		"docs": "typedoc"
+	},
+	"devDependencies": {
+		"@rollup/plugin-typescript": "^11.1.6",
+		"@types/node": "^22.4.1",
+		"rollup": "^4.21.0",
+		"rollup-plugin-dts": "^6.1.1",
+		"tslib": "^2.6.3",
+		"typedoc": "^0.26.6",
+		"typescript": "^5.5.3",
+		"vitest": "^2.0.5"
+	}
+}
