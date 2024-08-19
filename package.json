@@ -19,12 +19,14 @@
 	"module": "./dist/core.mjs",
 	"exports": {
 		".": {
+			"default": "./dist/core.cjs",
 			"import": "./dist/core.mjs",
 			"require": "./dist/core.umd.mjs",
 			"node": "./dist/core.cjs",
 			"types": "./dist/core.d.ts"
 		},
 		"./*": {
+			"default": "./src/$1/dist/$1.cjs",
 			"import": "./src/$1/dist/$1.mjs",
 			"require": "./src/$1/dist/$1.umd.mjs",
 			"node": "./src/$1/dist/$1.cjs",
