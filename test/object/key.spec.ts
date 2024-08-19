@@ -10,6 +10,11 @@ import {
 } from "../../src";
 
 class T {
+	constructor() {
+		T.f()
+		this.l();
+	}
+
 	public static a = 1;
 	public static b() {
 		return this.a;
