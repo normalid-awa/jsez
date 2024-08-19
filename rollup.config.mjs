@@ -6,6 +6,7 @@ const LIB_NAME = "jsez"
 
 /** @type {import('rollup').RollupOptions} */
 export default {
+	
 	input: "src/index.ts",
 	output: [
 		{
@@ -17,7 +18,7 @@ export default {
 			format: "esm",
 		},
 		{
-			file: path.join(OUTPUT_FOLDER, "index.umd.mcs"),
+			file: path.join(OUTPUT_FOLDER, "index.umd.mjs"),
 			format: "umd",
 			name: LIB_NAME
 		},
