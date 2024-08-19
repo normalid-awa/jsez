@@ -26,11 +26,11 @@
 			"types": "./dist/core.d.ts"
 		},
 		"./*": {
-			"default": "./src/$1/dist/$1.cjs",
-			"import": "./src/$1/dist/$1.mjs",
-			"require": "./src/$1/dist/$1.umd.mjs",
-			"node": "./src/$1/dist/$1.cjs",
-			"types": "./src/$1/dist/$1.d.ts"
+			"default": "./src/*/dist/*.cjs",
+			"import": "./src/*/dist/*.mjs",
+			"require": "./src/*/dist/*.umd.mjs",
+			"node": "./src/*/dist/*.cjs",
+			"types": "./src/*/dist/*.d.ts"
 		}
 	},
 	"files": [
