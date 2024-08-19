@@ -14,6 +14,11 @@ export function isInstantiated(obj: any): boolean {
 	return typeof obj.prototype === "undefined";
 }
 
+export function assertObjectIsInstantiated(obj: any): asserts obj is Object {
+	if (!isInstantiated(obj))
+		throw new Error("Object is not instantiated");
+}
+
 /**
  * Return all static keys of an object including private, protected and public
  * @param obj The object to get the keys of.
@@ -54,6 +59,7 @@ export var getStaticMethodKeys = function (obj: Object): string[] {
  * @returns
  */
 export function getInstanceMethodsKeys(obj: Object): string[] {
+	assertObjectIsInstantiated(obj);
 	return Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).filter(
 		(m) => typeof (obj as { [key: string]: unknown })[m] === "function"
 	);
@@ -64,6 +70,7 @@ export function getInstanceMethodsKeys(obj: Object): string[] {
  * @returns
  */
 export function getInstancePropertyKeys(obj: Object): string[] {
+	assertObjectIsInstantiated(obj);
 	return Object.getOwnPropertyNames(obj);
 }
 
@@ -73,5 +80,6 @@ export function getInstancePropertyKeys(obj: Object): string[] {
  * @returns
  */
 export function getInstanceKeys(obj: Object): string[] {
+	assertObjectIsInstantiated(obj);
 	return getInstancePropertyKeys(obj).concat(getInstanceMethodsKeys(obj));
 }
