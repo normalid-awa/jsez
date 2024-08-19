@@ -1,7 +1,7 @@
 {
 	"name": "@jsez/lib",
 	"private": false,
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"description": "A useful JavaScript library that provides tons of utilities during development.",
 	"repository": {
