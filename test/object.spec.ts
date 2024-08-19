@@ -1,5 +1,13 @@
 import { expect, test } from "vitest";
-import { isInstantiated } from "../src";
+import {
+	getInstanceKeys,
+	getInstanceMethodsKeys,
+	getInstancePropertyKeys,
+	getStaticKeys,
+	getStaticMethodKeys,
+	getStaticPropertyKeys,
+	isInstantiated,
+} from "../src";
 
 class T {
 	public static a = 1;
@@ -38,4 +46,40 @@ class T {
 test("Test isInstance", () => {
 	expect(isInstantiated(T)).toBe(false);
 	expect(isInstantiated(new T())).toBe(true);
+});
+
+test("Test getStaticKeys", () => {
+	expect(getStaticKeys(T).sort()).toEqual(
+		["a", "b", "c", "d", "e", "f"].sort()
+	);
+});
+
+test("Test getStaticPropertyKeys", () => {
+	expect(getStaticPropertyKeys(T).sort()).toEqual(
+		["a", "c", "d", "f"].sort()
+	);
+});
+
+test("Test getStaticMethodKeys", () => {
+	expect(getStaticMethodKeys(T).sort()).toEqual(
+		["b", "e"].sort()
+	);
+});
+
+test("Test getInstanceMethodsKeys", () => {
+	expect(getInstanceMethodsKeys(new T()).sort()).toEqual(
+		["constructor", "h", "k"].sort()
+	);
+});
+
+test("Test getInstancePropertiesKeys", () => {
+	expect(getInstancePropertyKeys(new T()).sort()).toEqual(
+		["g", "i", "j", "l"].sort()
+	);
+});
+
+test("Test getInstanceKeys", () => {
+	expect(getInstanceKeys(new T()).sort()).toEqual(
+		["constructor", "g", "h", "i", "j", "k", "l"].sort()
+	);
 });
