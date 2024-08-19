@@ -7,7 +7,7 @@ import {
 	getStaticMethodKeys,
 	getStaticPropertyKeys,
 	isInstantiated,
-} from "../src";
+} from "../../src";
 
 class T {
 	public static a = 1;
